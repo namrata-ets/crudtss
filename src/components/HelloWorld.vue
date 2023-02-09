@@ -8,6 +8,7 @@
       :headers="headers"
       :items="passengers"
       sort-by="trips"
+      server-items-length="66586"
       class="elevation-1"
     >
       <template v-slot:item.airline="{ item }">
