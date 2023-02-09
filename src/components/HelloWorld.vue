@@ -1,3 +1,5 @@
+<!-- eslint-disable vue/require-v-for-key -->
+<!-- eslint-disable vue/no-unused-vars -->
 <!-- eslint-disable vue/valid-v-slot -->
 
 <template>
@@ -8,6 +10,12 @@
       sort-by="trips"
       class="elevation-1"
     >
+      <template v-slot:item.airline="{ item }">
+        <span v-for="name in item.airline" v-bind="item.airline.id">
+          {{ name.name }}
+        </span>
+      </template>
+
       <template v-slot:top>
         <v-toolbar flat>
           <v-toolbar-title>Airline Reservation</v-toolbar-title>
@@ -92,6 +100,8 @@ export default {
   data: () => ({
     dialog: false,
     dialogDelete: false,
+    name: "",
+    airline: " ",
     headers: [
       {
         text: "Airline Name",
