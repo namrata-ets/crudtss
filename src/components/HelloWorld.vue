@@ -335,6 +335,118 @@ export default {
           ],
           __v: 0,
         },
+        {
+          _id: "63e4d663787533f77acb12c8",
+          name: "testuser",
+          trips: 15,
+          airline: [
+            {
+              id: 10,
+              name: "Swiss International Air Lines",
+              country: "Switzerland",
+              logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Swiss_International_Air_Lines_Logo_2011.svg/200px-Swiss_International_Air_Lines_Logo_2011.svg.png",
+              slogan: "Made of Switzerland. The Airline of Switzerland",
+              head_quaters:
+                "EuroAirport Basel Mulhouse Freiburg near Basel, Switzerland",
+              website: "www.swiss.com",
+              established: "2002",
+            },
+          ],
+          __v: 0,
+        },
+        {
+          _id: "63e4d6657875338ccccb12cd",
+          name: "testupName",
+          trips: 10,
+          airline: [
+            {
+              id: 7,
+              name: "Deutsche Lufthansa AG",
+              country: "Germany",
+              logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Lufthansa_Logo_2018.svg/300px-Lufthansa_Logo_2018.svg.png",
+              slogan: "Say yes to the world",
+              head_quaters: "Cologne, Germany",
+              website: "lufthansa.com",
+              established: "1953",
+            },
+          ],
+          __v: 0,
+        },
+        {
+          _id: "63e4d6687875335e69cb12d4",
+          name: "testupdatedName",
+          trips: 3,
+          airline: [
+            {
+              id: 1,
+              name: "Quatar Airways",
+              country: "Quatar",
+              logo: "https://upload.wikimedia.org/wikipedia/en/thumb/9/9b/Qatar_Airways_Logo.svg/300px-Qatar_Airways_Logo.svg.png",
+              slogan: "Going Places Together",
+              head_quaters: "Qatar Airways Towers, Doha, Qatar",
+              website: "www.qatarairways.com",
+              established: "1994",
+            },
+          ],
+          __v: 0,
+        },
+        {
+          _id: "63e4d66a78753322aecb12db",
+          name: "",
+          trips: 10,
+          airline: [
+            {
+              id: 8,
+              name: "Thai Airways",
+              country: "Thailand",
+              logo: "https://upload.wikimedia.org/wikipedia/en/thumb/5/58/Thai_Airways_Logo.svg/200px-Thai_Airways_Logo.svg.png",
+              slogan: "Smooth as Silk / I Fly THAI",
+              head_quaters:
+                "Jom Phol Subdistrict, Chatuchak, Bangkok, Thailand",
+              website: "www.thaiairways.com",
+              established: "1960",
+            },
+          ],
+          __v: 0,
+        },
+        {
+          _id: "63e4d6707875334a98cb12e5",
+          name: "TestUserName",
+          trips: 3,
+          airline: [
+            {
+              id: 5,
+              name: "Eva Air",
+              country: "Taiwan",
+              logo: "https://upload.wikimedia.org/wikipedia/en/thumb/e/ed/EVA_Air_logo.svg/250px-EVA_Air_logo.svg.png",
+              slogan: "Sharing the World, Flying Together",
+              head_quaters:
+                "376, Hsin-Nan Rd., Sec. 1, Luzhu, Taoyuan City, Taiwan",
+              website: "www.evaair.com",
+              established: "1989",
+            },
+          ],
+          __v: 0,
+        },
+        {
+          _id: "63e4d67378753347efcb12ea",
+          name: "TestUserName12",
+          trips: 1,
+          airline: [
+            {
+              id: 3,
+              name: "Cathay Pacific",
+              country: "Hong Kong",
+              logo: "https://upload.wikimedia.org/wikipedia/en/thumb/1/17/Cathay_Pacific_logo.svg/300px-Cathay_Pacific_logo.svg.png",
+              slogan: "Move Beyond",
+              head_quaters:
+                "Cathay City, Hong Kong International Airport, Chek Lap Kok, Hong Kong",
+              website: "www.cathaypacific.com",
+              established: "1946",
+            },
+          ],
+          __v: 0,
+        },
       ];
     },
 
