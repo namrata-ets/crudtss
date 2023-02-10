@@ -8,11 +8,18 @@
 
 <template>
   <v-container>
+    
+    <v-card>
+    <v-card-title class="text-center">
+      Airline Reservation System
+      <v-spacer></v-spacer>
+    </v-card-title>
+    </v-card>
     <v-data-table
       :headers="headers"
       :items="passengers"
       sort-by="trips"
-      :server-items-length=totalPassengers
+      :server-items-length="totalPassengers"
       class="elevation-1"
       :options.sync="options"
       :items-per-page="10"
@@ -25,7 +32,8 @@
 
       <template v-slot:top>
         <v-toolbar flat>
-          <v-toolbar-title>Airline Reservation</v-toolbar-title>
+       
+      <v-spacer></v-spacer>
           <v-divider class="mx-4" inset vertical></v-divider>
           <v-spacer></v-spacer>
           <v-dialog v-model="dialog" max-width="500px">
@@ -46,18 +54,21 @@
                       <v-text-field
                         v-model="editedItem.airline"
                         label="Airline name"
+                        value=this.editedItem.airline
                       ></v-text-field>
                     </v-col>
                     <v-col cols="12" sm="6" md="4">
                       <v-text-field
                         v-model="editedItem.trips"
                         label="No Of Trips"
+                        value="editedItem.trips"
                       ></v-text-field>
                     </v-col>
                     <v-col cols="12" sm="6" md="4">
                       <v-text-field
                         v-model="editedItem.name"
                         label="Passenger Name"
+                        value="editedItem.name"
                       ></v-text-field>
                     </v-col>
                   </v-row>
@@ -75,7 +86,9 @@
           </v-dialog>
           <v-dialog v-model="dialogDelete" max-width="500px">
             <v-card>
-              <v-card-title class="text-h5">Are you sure you want to delete this item?</v-card-title>
+              <v-card-title class="text-h5"
+                >Are you sure you want to delete this item?</v-card-title
+              >
               <v-card-actions>
                 <v-spacer></v-spacer>
                 <v-btn color="blue darken-1" text @click="closeDelete"
@@ -106,10 +119,10 @@ export default {
   data: () => ({
     dialog: false,
     dialogDelete: false,
-    name: "",
+    search: "",
     airline: " ",
     // eslint-disable-next-line prettier/prettier
-    options:{},
+    options: {},
     loading: true,
     passengers: [],
     totalPassengers: 0,
@@ -130,14 +143,14 @@ export default {
     editedIndex: -1,
 
     editedItem: {
-      name: "",
+      name: " ",
       trips: 0,
-      airline: 0,
+      airline: " ",
     },
     defaultItem: {
-      name: "",
+      name: " ",
       trips: 0,
-      airline: 0,
+      airline: " ",
     },
   }),
 
@@ -195,8 +208,8 @@ export default {
 
       for (var i = 0; i < this.passengers.length; i++) {
         this.airlineName = this.passengers[i].airline;
-        this.name = this.passengers[i].name;
-        console.log(this.name);
+        //this.name = this.passengers[i].name;
+        //console.log(this.name);
         console.log(this.airlineName);
 
         for (var x in this.airlineName) {
@@ -207,7 +220,7 @@ export default {
     },
     fakeApiCall() {
       return new Promise((resolve) => {
-        const { sortBy, sortDesc, page, itemsPerPage } = this.options;
+        let { sortBy, sortDesc, page, itemsPerPage } = this.options;
 
         let items = this.getPassengersData();
         const total = items.length;
@@ -243,27 +256,17 @@ export default {
     },
 
     editItem(item) {
-      var airlineName = "";
-      var nofoftrips;
-      var pname;
-
       this.editedIndex = this.passengers.indexOf(item);
 
       for (var i = 0; i < item.airline.length; i++) {
         console.log(item.airline[i].name);
-        airlineName = item.airline[i].name;
-        nofoftrips = item.trips;
-        pname = item.name;
+        this.editedItem.airline = item.airline[i].name;
+        this.editedItem.name = item.name;
+        this.editedItem.trips = item.trips;
       }
-      console.log(airlineName, nofoftrips, pname);
-      const adata = {
-        airline: airlineName,
-        trips: nofoftrips,
-        name: pname,
-      };
-      this.editedItem = Object.assign({}, { adata });
       console.log(this.editedItem);
-      console.log(adata.airline, adata.trips, adata.name);
+      this.editedItem = Object.assign({}, { item });
+
       this.dialog = true;
     },
 
