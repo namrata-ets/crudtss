@@ -24,7 +24,7 @@
     <v-data-table
       :headers="headers"
       :items="passengers"
-      sort-by="trips"
+      sort-by="name"
       :server-items-length="totalPassengers"
       class="elevation-1"
       :options.sync="options"
@@ -138,7 +138,6 @@ export default {
       {
         text: "Airline Name",
         align: "start",
-        sortable: false,
         value: "airline",
       },
       { text: "Number of Trips", value: "trips" },
@@ -225,6 +224,7 @@ export default {
         }
       }
     },
+
     fakeApiCall() {
       return new Promise((resolve) => {
         let { sortBy, sortDesc, page, itemsPerPage } = this.options;
