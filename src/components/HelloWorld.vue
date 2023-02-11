@@ -8,11 +8,17 @@
 
 <template>
   <v-container>
-    
     <v-card>
-    <v-card-title class="text-center">
-      Airline Reservation System
+      <v-card-title>
+      Airline Reservation
       <v-spacer></v-spacer>
+      <v-text-field
+        v-model="search"
+        append-icon="mdi-magnify"
+        label="Search"
+        single-line
+        hide-details
+      ></v-text-field>
     </v-card-title>
     </v-card>
     <v-data-table
@@ -23,6 +29,7 @@
       class="elevation-1"
       :options.sync="options"
       :items-per-page="10"
+      :search="search"
     >
       <template v-slot:item.airline="{ item }">
         <span v-for="name in item.airline" v-bind="item.airline.id">
@@ -119,7 +126,7 @@ export default {
   data: () => ({
     dialog: false,
     dialogDelete: false,
-    search: "",
+    search: " ",
     airline: " ",
     // eslint-disable-next-line prettier/prettier
     options: {},
